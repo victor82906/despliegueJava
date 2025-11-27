@@ -1,0 +1,13 @@
+FROM openjdk:21-ea-1-jdk
+
+#directorio del contenedor en el que se ejecuta lo siguiente
+WORKDIR /app
+
+#copio mi jar a el jar del contenedor
+COPY output.jar app.jar
+
+#pongo el puerto:
+EXPOSE 8080
+
+#se ejecuta automaticamente este comando para arrancar la aplicacion .jar cuando inicias el contenedor
+CMD ["java", "-jar", "app.jar"]
